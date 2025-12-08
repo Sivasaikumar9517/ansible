@@ -1,0 +1,18 @@
+- name: Install & start nginx
+  hosts: web
+  become: yes
+  tasks:
+  - name: removing existing nginx
+    ansible.builtin.package:
+      name: nginx
+      state: absent
+  - name: Installing the nginx
+    ansible.builtin.package:
+      name: nginx
+      state: present
+  - name: enabling & starting nginx
+    ansible.builtin.service:
+      name: nginx 
+      state: started
+      enabled: yes
+
