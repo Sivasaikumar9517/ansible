@@ -1,0 +1,16 @@
+<student>
+    <name>Sivasaikumar</name>
+    <email>sivasaikumar123@gmail.com</email>
+    <addresss>
+        <permaddress>
+            <street>vinayaka nagar</street>
+            <roadno>2</roadno>
+        </permaddress>
+        <tempaddress>
+            <street>sri nagar</street>
+            <roadno>7</roadno>
+        </tempaddress>
+    </addresss>
+    <phoneno>8993784984</phoneno>
+
+</student>

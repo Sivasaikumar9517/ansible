@@ -1,0 +1,19 @@
+{
+    "name": "sivasai",
+    "email": "sivasai45678@gmail.com",
+    "address":
+    [
+        {
+            "type": "perm",
+            "doorno":"23",
+            "street":"sr nagar"
+        },
+            
+        {
+             "type": "temp",
+            "doorno":"23",
+            "street":"sr nagar"
+        }
+   ],
+    "phoneno": "45678976543"
+}

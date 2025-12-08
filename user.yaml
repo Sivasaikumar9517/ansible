@@ -1,0 +1,11 @@
+name: Sivasai
+email: sivasai45678@gmail.com
+addresses:
+  - type: perm address
+    street: 20
+    name: "gandi nagar"
+  - type: temp address
+    street: 30
+    name: "rr nagar"
+phoneno: 7876543456
+
