@@ -1,0 +1,17 @@
+- name: printing the data types 
+  hosts: local
+  connection: local
+  vars:
+    name: "sivasaikumar" #string
+    years: 25 # integer
+    skills: # list []
+    - Devops
+    - AWS
+    available: true #boolean
+  adderess:
+    village: kaluvai
+    pincode: 524343
+  tasks:
+  - name: printing info
+    ansible.builtin.debug:
+      msg: " My name is {{ name }}, Age is {{ years }}, I have this skills {{ skills }}, Available for interview {{ available }}, and Address is {{ adderess }}"
