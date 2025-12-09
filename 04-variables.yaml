@@ -15,3 +15,26 @@
       trainer: "pavan"
     ansible.builtin.debug:
       msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
+
+- name: varaiables from files
+  hosts: web  
+  vars_from:
+  - vars.yaml
+  tasks:
+  - name: printing vars from varaiables
+    ansible.builtin.debug:
+      msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
+
+- name:  varaiables from prompt
+  hosts: web  
+  vars_prompt:
+  - name: course
+    prompt: please enter course name  
+  - name: duration
+    prompt: please enter the duration of the Course
+  - name: trainer
+    prompt: please enter the trainer name 
+  tasks:
+  - name: printing the varaiables from prompt
+    ansible.builtin.debug:
+      msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
