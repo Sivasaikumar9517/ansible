@@ -21,7 +21,7 @@
   vars_files:
   - vars.yaml
   tasks:
-  - name: printing vars from varaiables
+  - name: printing vars from files
     ansible.builtin.debug:
       msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
 
