@@ -8,9 +8,9 @@
     - Devops
     - AWS
     available: true #boolean
-  adderess:
-    village: kaluvai
-    pincode: 524343
+    adderess:
+      village: kaluvai
+      pincode: 524343
   tasks:
   - name: printing info
     ansible.builtin.debug:
