@@ -1,0 +1,11 @@
+- name: different level of varaiables
+  hosts: web  
+  vars:
+   greet: playlevel
+  tasks:
+  - name: printing the play level varaiables
+    ansible.builtin.debug:
+      msg: "{{ greet }}"
+  - name: printing the task level varaiables  
+    ansible.builtin.debug:
+      msg: "{{ greet }}"
