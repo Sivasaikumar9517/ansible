@@ -1,9 +1,9 @@
 - name: different level of varaiables
   hosts: web  
-  vars:
-   course: "Devops with AWS"
-   duration: 100hrs
-   trainer: sivakumar
+  # vars:
+  #  course: "Devops with AWS"
+  #  duration: 100hrs
+  #  trainer: sivakumar
   tasks:
   - name: printing the play level varaiables
     ansible.builtin.debug:
@@ -25,16 +25,30 @@
     ansible.builtin.debug:
       msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
 
-- name:  varaiables from prompt
+# - name:  varaiables from prompt
+#   hosts: web  
+#   vars_prompt:
+#   - name: course
+#     prompt: please enter course name  
+#   - name: duration
+#     prompt: please enter the duration of the Course
+#   - name: trainer
+#     prompt: please enter the trainer name 
+#   tasks:
+#   - name: printing the varaiables from prompt
+#     ansible.builtin.debug:
+#       msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
+
+- name: varaiables from inventory
   hosts: web  
-  vars_prompt:
-  - name: course
-    prompt: please enter course name  
-  - name: duration
-    prompt: please enter the duration of the Course
-  - name: trainer
-    prompt: please enter the trainer name 
   tasks:
-  - name: printing the varaiables from prompt
+  - name: printing varaiables from inventory
     ansible.builtin.debug:
       msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
+
+# - name: varaiables from Args
+#   hosts: web
+#   tasks:
+#   - name: printing varaiables from Args
+#     ansible.builtin.debug:
+#       msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
