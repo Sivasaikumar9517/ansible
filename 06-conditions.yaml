@@ -1,9 +1,8 @@
 - name: using conditions
   hosts: local
   connection: local
-  vars_prompt:
-  - name: number
-    prompt: enter the number
+  vars:
+    number: 99
   tasks:
   - name: printing when number is less than 100
     ansible.builtin.debug:
