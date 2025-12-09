@@ -1,11 +1,17 @@
 - name: different level of varaiables
   hosts: web  
   vars:
-   greet: playlevel
+   course: "Devops with AWS"
+   duration: 100hrs
+   trainer: sivakumar
   tasks:
   - name: printing the play level varaiables
     ansible.builtin.debug:
-      msg: "{{ greet }}"
+      msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
   - name: printing the task level varaiables  
+    vars:
+      course: "ansible"
+      duration: "10hrs"
+      trainer: "pavan"
     ansible.builtin.debug:
-      msg: "{{ greet }}"
+      msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
