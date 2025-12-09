@@ -5,9 +5,9 @@
   #  duration: 100hrs
   #  trainer: sivakumar
   tasks:
-  - name: printing the play level varaiables
-    ansible.builtin.debug:
-      msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
+  # - name: printing the play level varaiables
+  #   ansible.builtin.debug:
+  #     msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
   - name: printing the task level varaiables  
     vars:
       course: "ansible"
