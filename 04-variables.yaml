@@ -18,7 +18,7 @@
 
 - name: varaiables from files
   hosts: web  
-  vars_from:
+  vars_files:
   - vars.yaml
   tasks:
   - name: printing vars from varaiables
