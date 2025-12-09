@@ -44,7 +44,7 @@
   tasks:
   - name: printing varaiables from inventory
     ansible.builtin.debug:
-      msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
+      msg: "Course is {{ COURSE }}, duration of the course is {{ DURATION }}, and trainer is {{ TRAINER }}"
 
 # - name: varaiables from Args
 #   hosts: web
