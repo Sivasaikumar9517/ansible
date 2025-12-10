@@ -8,3 +8,17 @@
     ansible.builtin.debug:
       msg: "Given number {{ number }} is less than 100"
     when: number < 100
+- name: using conditions1
+  hosts: local
+  connection: local
+  tasks:
+  - name: Install when os family is redhat
+    ansible.builtin.dnf:
+      name: nginx
+      state: present
+    when: ansible_os_family == "RedHat"
+  - name: Install when ansible_os_family is Debian
+    ansible.builtin.apt:
+      name: nginx
+      state: present
+    when: ansible_os_family == "Debian"
