@@ -11,6 +11,7 @@
 - name: using conditions1
   hosts: local
   connection: local
+  become: yes
   tasks:
   - name: Install when os family is redhat
     ansible.builtin.dnf:
