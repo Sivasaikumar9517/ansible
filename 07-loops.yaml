@@ -3,22 +3,22 @@
   become: yes
   tasks: 
   - name: Installing Packages
-  ansible.builtin.package:
-    name:
-    state: present
-  loop:
-  - gcc
-  - mysql
-  - nodejs
-  - git
+    ansible.builtin.package:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - gcc
+    - mysql
+    - nodejs
+    - git
 - name: Install and deleteing Packages
   hosts: web
   become: yes
   tasks: 
   - name: Install and removing Packages
     ansible.builtin.package:
-      name:
-      state:
+      name: "{{ item.name }}"
+      state: "{{ item.state }}"
     loop:
     - { name: 'gcc' , state: 'present'}
     - { name: 'mysql' , state: 'absent'}
