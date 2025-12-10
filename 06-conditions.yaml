@@ -1,6 +1,7 @@
 - name: using conditions
   hosts: local
   connection: local
+  become: yes
   vars:
     number: 100
   tasks:
