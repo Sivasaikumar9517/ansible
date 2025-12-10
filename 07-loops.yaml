@@ -1,0 +1,26 @@
+- name: looping
+  hosts: web
+  become: yes
+  tasks: 
+  - name: Installing Packages
+  ansible.builtin.packages:
+    name:
+    state: present
+  loop:
+  - gcc
+  - mysql
+  - nodejs
+  - git
+- name: Install and deleteing Packages
+  hosts: web
+  become: yes
+  tasks: 
+  - name: Install and removing Packages
+    ansible.builtin.package:
+      name:
+      state:
+    loop:
+    - { name: 'gcc' , state: 'present'}
+    - { name: 'mysql' , state: 'absent'}
+    - { name: 'nodejs' , state: 'absent'}
+    - { name: 'git' , state: 'present'}
