@@ -45,6 +45,13 @@
     ansible.builtin.copy:
       src: backend.service
       dest: /etc/systemd/system/backend.service
+
+  - name: Installing the mysql libraries
+    ansible.builtin.pip:
+      name: "{{ item }}"
+      state: present
+    loop:
+    - PyMySQL
   
   - name: Loading the schema
     community.mysql.mysql_db:
