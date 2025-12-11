@@ -3,10 +3,12 @@
   become: yes
   tasks: 
   - name: Disabling existing nodejs version
-    ansible.builtin.command: dnf module disable nodejs -y
+    ansible.builtin.command: 
+      cmd: dnf module disable nodejs -y
 
   - name: Enabeling Nodejs 20 version
-    ansible.builtin.command: dnf module enable nodejs:20 -y
+    ansible.builtin.command: 
+      cmd: dnf module enable nodejs:20 -y
 
   - name: Installing Nodejs & Mysql package
     ansible.builtin.package:
@@ -52,6 +54,7 @@
       state: present
     loop:
     - PyMySQL
+    - cryptography
   
   - name: Loading the schema
     community.mysql.mysql_db:
