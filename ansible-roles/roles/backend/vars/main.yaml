@@ -1,3 +1,5 @@
 login_host: "mysql.jobsearchindia.online"
 login_password: ExpenseApp@1
 login_user: root
+component: backend
+app_location: /app

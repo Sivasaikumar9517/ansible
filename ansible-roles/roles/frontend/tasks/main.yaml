@@ -9,33 +9,36 @@
     enabled: yes
     state: started
 
-- name: Removing the nginx directory
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: absent
+- name: Including common roles
+  include_role:
+    name: common
+    tasks_from: main
 
-- name: Creating the nginx directory
-  ansible.builtin.file:
-    path: /usr/share/nginx/html
-    state: directory
+# - name: Removing the nginx directory
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: absent
 
-- name: Download the frontend code
-  ansible.builtin.get_url:
-    url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
-    dest: /tmp/frontend.zip
+# - name: Creating the nginx directory
+#   ansible.builtin.file:
+#     path: /usr/share/nginx/html
+#     state: directory
 
-- name: Unzipping the code into nginx directory
-  ansible.builtin.unarchive:
-    src: /tmp/frontend.zip
-    dest: /usr/share/nginx/html
-    remote_src: yes
+# - name: Download the frontend code
+#   ansible.builtin.get_url:
+#     url: https://expense-builds.s3.us-east-1.amazonaws.com/expense-frontend-v2.zip
+#     dest: /tmp/frontend.zip
+
+# - name: Unzipping the code into nginx directory
+#   ansible.builtin.unarchive:
+#     src: /tmp/frontend.zip
+#     dest: /usr/share/nginx/html
+#     remote_src: yes
 
 - name: copy the expense Configuration
   ansible.builtin.template:
     src: expense.conf.j2
     dest: /etc/nginx/default.d/expense.conf
+  notify: 
+  - restart the nginx
 
-- name: restart the nginx
-  ansible.builtin.service:
-    name: nginx
-    state: restarted
