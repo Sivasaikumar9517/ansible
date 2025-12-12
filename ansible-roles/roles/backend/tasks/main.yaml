@@ -45,8 +45,8 @@
     state: present
 
 - name: copy the service file
-  ansible.builtin.copy:
-    src: backend.service
+  ansible.builtin.template:
+    src: backend.service.j2
     dest: /etc/systemd/system/backend.service
 
 - name: Installing the mysql libraries
