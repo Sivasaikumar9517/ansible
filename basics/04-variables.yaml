@@ -46,9 +46,26 @@
 #     ansible.builtin.debug:
 #       msg: "Course is {{ COURSE }}, duration of the course is {{ DURATION }}, and trainer is {{ TRAINER }}"
 
-- name: varaiables from Args
-  hosts: web
+# - name: varaiables from Args
+#   hosts: web
+#   tasks:
+#   - name: printing varaiables from Args
+#     ansible.builtin.debug:
+#       msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
+
+
+- name: Printing the varaiables
+  hosts: localhost
+  connection: local
+  vars:
+
+    course: "Devops with AWS"
+    duration: 100hrs
+    trainer: sivakumar
   tasks:
-  - name: printing varaiables from Args
+  - name: printing the varaiables
     ansible.builtin.debug:
-      msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
+    vars:
+      trainer: Sivasai
+      msg: " course is {{ course }}, duration is {{ duration }}, and trainer is {{ trainer }}"
+
