@@ -55,7 +55,7 @@
 
 
 - name: Printing the varaiables
-  hosts: localhost
+  hosts: local
   connection: local
   vars:
 
