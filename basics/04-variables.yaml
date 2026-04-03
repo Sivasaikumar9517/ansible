@@ -54,18 +54,21 @@
 #       msg: "Course is {{ course }}, duration of the course is {{ duration }}, and trainer is {{ trainer }}"
 
 
-- name: Printing the varaiables
+- name: Printing the variables
   hosts: local
   connection: local
   vars:
-
     course: "Devops with AWS"
     duration: 100hrs
     trainer: sivakumar
+
   tasks:
-  - name: printing the varaiables
-    ansible.builtin.debug:
-    vars:
-      trainer: Sivasai
-      msg: " course is {{ course }}, duration is {{ duration }}, and trainer is {{ trainer }}"
+    - name: printing the variables
+      vars:
+        trainer: Sivasai
+      ansible.builtin.debug:
+        msg: "course is {{ course }}, duration is {{ duration }}, and trainer is {{ trainer }}"
+
+
+        
 
