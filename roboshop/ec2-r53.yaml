@@ -4,7 +4,7 @@
   become: yes
   vars:
     ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-07c8acf3fa6b923fa # replace with your SG ID
+    sg_id: sg-08bc0fad006eb3766 # replace with your SG ID
     zone_id: "Z0948150OFPSYTNVYZOY" # replace with your ID
     domain_name: "daws86s.fun"
     instances:
