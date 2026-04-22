@@ -1,7 +1,6 @@
 - name: create ec2 and R53 records
   hosts: local
   connection: local
-  become: yes
   vars:
     ami_id: ami-0220d79f3f480ecf5
     sg_id: sg-08bc0fad006eb3766 # replace with your SG ID
